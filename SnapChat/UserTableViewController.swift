@@ -8,9 +8,10 @@
 
 import UIKit
 
-class UserTableViewController: UITableViewController {
+class UserTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var userArray: [String] = []
+    var activeReceipient = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,9 @@ class UserTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+
+
 
     // MARK: - Table view data source
 
@@ -60,6 +64,52 @@ class UserTableViewController: UITableViewController {
         return cell
     }
 
+
+    func  imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+
+        var imageToSend = PFObject(className:"Image")
+        imageToSend["image"] = UIImageJPEGRepresentation(image, 0.5)
+        imageToSend["sender"] = PFUser.currentUser().username
+        imageToSend["receiverUsername"] = userArray[activeReceipient]
+        imageToSend.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError!) -> Void in
+            if (success) {
+                // The object has been saved.
+                self.displayAlert("Image has been sent", error: "")
+
+            } else {
+                // There was a problem, check error.description
+            }
+        }
+
+
+    }
+    @IBAction func chooseImage(sender: AnyObject) {
+        var image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        image.allowsEditing = false
+        self.presentViewController(image, animated: true, completion: nil)
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        activeReceipient = indexPath.row
+         chooseImage(self)
+    }
+
+    func displayAlert(title:String, error:String) {
+
+        var alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { action in
+
+            self.dismissViewControllerAnimated(true, completion: nil)
+
+        }))
+
+        self.presentViewController(alert, animated: true, completion: nil)
+
+    }
 
     /*
     // Override to support conditional editing of the table view.

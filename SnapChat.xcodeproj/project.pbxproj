@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F27258C91AAC516500262790 /* snapchatLaunch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F27258C81AAC516500262790 /* snapchatLaunch.jpg */; };
+		F27258CB1AAC570100262790 /* Snapchat-flashy-features (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = F27258CA1AAC570100262790 /* Snapchat-flashy-features (1).jpg */; };
 		F2C139FD1AAC24EF001D826B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C139FC1AAC24EF001D826B /* AppDelegate.swift */; };
 		F2C13A001AAC24EF001D826B /* SnapChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2C139FE1AAC24EF001D826B /* SnapChat.xcdatamodeld */; };
 		F2C13A021AAC24EF001D826B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C13A011AAC24EF001D826B /* ViewController.swift */; };
@@ -32,6 +34,7 @@
 		F2C13A411AAC3A6E001D826B /* fb-button.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C13A401AAC3A6E001D826B /* fb-button.png */; };
 		F2C13A431AAC3B39001D826B /* Snapchat-flashy-features.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2C13A421AAC3B39001D826B /* Snapchat-flashy-features.jpg */; };
 		F2C13A451AAC4179001D826B /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C13A441AAC4179001D826B /* UserTableViewController.swift */; };
+		F2C13A4B1AAC5074001D826B /* snapchaticon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C13A4A1AAC5074001D826B /* snapchaticon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F27258C81AAC516500262790 /* snapchatLaunch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snapchatLaunch.jpg; sourceTree = "<group>"; };
+		F27258CA1AAC570100262790 /* Snapchat-flashy-features (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Snapchat-flashy-features (1).jpg"; sourceTree = "<group>"; };
 		F2C139F71AAC24EF001D826B /* SnapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C139FB1AAC24EF001D826B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2C139FC1AAC24EF001D826B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 		F2C13A401AAC3A6E001D826B /* fb-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-button.png"; sourceTree = "<group>"; };
 		F2C13A421AAC3B39001D826B /* Snapchat-flashy-features.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Snapchat-flashy-features.jpg"; sourceTree = "<group>"; };
 		F2C13A441AAC4179001D826B /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		F2C13A4A1AAC5074001D826B /* snapchaticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snapchaticon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +158,11 @@
 				F2C13A441AAC4179001D826B /* UserTableViewController.swift */,
 				F2C13A031AAC24EF001D826B /* Main.storyboard */,
 				F2C13A061AAC24EF001D826B /* Images.xcassets */,
+				F2C13A4A1AAC5074001D826B /* snapchaticon.png */,
 				F2C13A421AAC3B39001D826B /* Snapchat-flashy-features.jpg */,
+				F27258CA1AAC570100262790 /* Snapchat-flashy-features (1).jpg */,
 				F2C13A401AAC3A6E001D826B /* fb-button.png */,
+				F27258C81AAC516500262790 /* snapchatLaunch.jpg */,
 				F2C13A081AAC24EF001D826B /* LaunchScreen.xib */,
 				F2C139FE1AAC24EF001D826B /* SnapChat.xcdatamodeld */,
 				F2C139FA1AAC24EF001D826B /* Supporting Files */,
@@ -268,9 +277,12 @@
 			files = (
 				F2C13A051AAC24EF001D826B /* Main.storyboard in Resources */,
 				F2C13A411AAC3A6E001D826B /* fb-button.png in Resources */,
+				F2C13A4B1AAC5074001D826B /* snapchaticon.png in Resources */,
 				F2C13A0A1AAC24EF001D826B /* LaunchScreen.xib in Resources */,
 				F2C13A071AAC24EF001D826B /* Images.xcassets in Resources */,
 				F2C13A431AAC3B39001D826B /* Snapchat-flashy-features.jpg in Resources */,
+				F27258CB1AAC570100262790 /* Snapchat-flashy-features (1).jpg in Resources */,
+				F27258C91AAC516500262790 /* snapchatLaunch.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +516,7 @@
 				F2C13A1B1AAC24EF001D826B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2C13A1C1AAC24EF001D826B /* Build configuration list for PBXNativeTarget "SnapChatTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +525,7 @@
 				F2C13A1E1AAC24EF001D826B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
