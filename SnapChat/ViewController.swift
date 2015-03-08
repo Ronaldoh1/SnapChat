@@ -10,10 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func signInWithFbButtonTapped(sender: AnyObject) {
+        var permissions = ["public_profile", "email"]
+
+        PFFacebookUtils.logInWithPermissions(permissions, block: {
+            (user: PFUser!, error: NSError!) -> Void in
+            if let user = user {
+                if user.isNew {
+                    println("User signed up and logged in through Facebook!")
+                } else {
+                    println("User logged in through Facebook!")
+                }
+            } else {
+                println("Uh oh. The user cancelled the Facebook login.")
+            }
+        })
+
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
+
+            }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
