@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F27258C91AAC516500262790 /* snapchatLaunch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F27258C81AAC516500262790 /* snapchatLaunch.jpg */; };
 		F27258CB1AAC570100262790 /* Snapchat-flashy-features (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = F27258CA1AAC570100262790 /* Snapchat-flashy-features (1).jpg */; };
+		F27258CD1AAC618000262790 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F27258CC1AAC618000262790 /* ParseUI.framework */; };
 		F2C139FD1AAC24EF001D826B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C139FC1AAC24EF001D826B /* AppDelegate.swift */; };
 		F2C13A001AAC24EF001D826B /* SnapChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2C139FE1AAC24EF001D826B /* SnapChat.xcdatamodeld */; };
 		F2C13A021AAC24EF001D826B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C13A011AAC24EF001D826B /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		F27258C81AAC516500262790 /* snapchatLaunch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snapchatLaunch.jpg; sourceTree = "<group>"; };
 		F27258CA1AAC570100262790 /* Snapchat-flashy-features (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Snapchat-flashy-features (1).jpg"; sourceTree = "<group>"; };
+		F27258CC1AAC618000262790 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		F2C139F71AAC24EF001D826B /* SnapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C139FB1AAC24EF001D826B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2C139FC1AAC24EF001D826B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				F2C13A391AAC2B93001D826B /* StoreKit.framework in Frameworks */,
 				F2C13A371AAC2B88001D826B /* Security.framework in Frameworks */,
 				F2C13A351AAC2B7D001D826B /* QuartzCore.framework in Frameworks */,
+				F27258CD1AAC618000262790 /* ParseUI.framework in Frameworks */,
 				F2C13A331AAC2B6F001D826B /* MobileCoreServices.framework in Frameworks */,
 				F2C13A311AAC2B65001D826B /* CoreLocation.framework in Frameworks */,
 				F2C13A2F1AAC2B5B001D826B /* CoreGraphics.framework in Frameworks */,
@@ -120,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				F2C13A3E1AAC2BB2001D826B /* libsqlite3.dylib */,
+				F27258CC1AAC618000262790 /* ParseUI.framework */,
 				F2C13A3C1AAC2BA7001D826B /* libz.dylib */,
 				F2C13A3A1AAC2B9D001D826B /* SystemConfiguration.framework */,
 				F2C13A381AAC2B93001D826B /* StoreKit.framework */,

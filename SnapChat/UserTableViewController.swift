@@ -10,8 +10,11 @@ import UIKit
 
 class UserTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+
     var userArray: [String] = []
     var activeReceipient = 0
+
+    var timer = NSTimer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +30,78 @@ class UserTableViewController: UITableViewController, UIImagePickerControllerDel
 
         for user in users {
             userArray.append(user.username)
+
+            tableView.reloadData()
+        }
+        timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("checkForMessage"), userInfo: nil, repeats: true)
+
+    }
+    func checkForMessage(){
+
+        var query = PFQuery(className: "Image")
+        query.whereKey("receiverUsername", equalTo: PFUser.currentUser().username)
+
+        var images = query.findObjects()
+
+        var done = false
+
+
+        for image in images {
+            if done == false {
+
+
+                
+                var imageView:PFImageView  =  PFImageView()
+                imageView.file = image["photo"] as! PFFile
+
+                imageView.loadInBackground({ (photo, error) -> Void in
+
+                    if error == nil {
+
+                        var senderUsername = image["sender"]
+
+                        var alert = UIAlertController(title: "You got a new picture!", message: "Message from \(senderUsername)", preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+
+
+                        var backgroundview = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
+                        backgroundview.backgroundColor = UIColor.blackColor()
+                        backgroundview.alpha = 0.6
+                        backgroundview.tag = 3
+
+                    var displayImage = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
+                        self.view.addSubview(displayImage)
+                        displayImage.tag = 3
+
+          self.timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("hideMessage"), userInfo: nil, repeats: true)
+
+                    }))
+
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+
+
+                })
+
+
+
+
+
+                done = true
+            }
+
         }
 
     }
+    func hideMessage(){
 
+        for subview in self.view.subviews {
+            if subview.tag == 3 {
+                subview.removeFromSuperview()
+            }
+        }
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,7 +140,7 @@ class UserTableViewController: UITableViewController, UIImagePickerControllerDel
         self.dismissViewControllerAnimated(true, completion: nil)
 
         var imageToSend = PFObject(className:"Image")
-        imageToSend["image"] = UIImageJPEGRepresentation(image, 0.5)
+        imageToSend["image"] = PFFile(name: "image.jpeg", data: UIImageJPEGRepresentation(image, 0.5)) 
         imageToSend["sender"] = PFUser.currentUser().username
         imageToSend["receiverUsername"] = userArray[activeReceipient]
         imageToSend.saveInBackgroundWithBlock {
@@ -109,6 +180,13 @@ class UserTableViewController: UITableViewController, UIImagePickerControllerDel
 
         self.presentViewController(alert, animated: true, completion: nil)
 
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "lougout"{
+
+            PFUser.logOut()
+    }
     }
 
     /*

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ParseUI
 
 class ViewController: UIViewController {
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()

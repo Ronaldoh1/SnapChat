@@ -4,5 +4,6 @@
 
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
