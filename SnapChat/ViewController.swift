@@ -18,8 +18,11 @@ class ViewController: UIViewController {
             if let user = user {
                 if user.isNew {
                     println("User signed up and logged in through Facebook!")
+
+                    self.performSegueWithIdentifier("showUsers", sender: self)
                 } else {
                     println("User logged in through Facebook!")
+                    self.performSegueWithIdentifier("showUsers", sender: self)
                 }
             } else {
                 println("Uh oh. The user cancelled the Facebook login.")
@@ -34,6 +37,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
 
             }
+
+    //if you try to segueway in view did load and go straight to the user page. Instead do it in the view did apprear. 
+
+    override func viewDidAppear(animated: Bool) {
+
+        //test if there is a user. if there is perform the segue. 
+
+        if PFUser.currentUser() != nil{
+            self.performSegueWithIdentifier("showUsers", sender: self)
+        }
+
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
